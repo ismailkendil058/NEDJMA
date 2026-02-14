@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 174 58% 51%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 174 58% 51%;
+
+    --radius: 0.25rem;
+
+    /* Custom Nedjma tokens */
+    --nedjma-teal: 174 58% 51%;
+    --nedjma-teal-light: 174 58% 95%;
+    --nedjma-gold: 43 74% 49%;
+    --nedjma-cream: 40 33% 97%;
+    --nedjma-charcoal: 0 0% 15%;
+
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 15%;
+    --sidebar-primary: 0 0% 0%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 174 58% 95%;
+    --sidebar-accent-foreground: 0 0% 0%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 174 58% 51%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 5%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 174 58% 51%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 174 58% 51%;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 174 58% 51%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 174 58% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    @apply font-medium tracking-tight;
+  }
+}
+
+@layer components {
+  .luxury-heading {
+    font-family: var(--font-serif);
+    @apply text-4xl md:text-5xl lg:text-6xl font-light tracking-tight;
+  }
+
+  .luxury-subheading {
+    font-family: var(--font-serif);
+    @apply text-2xl md:text-3xl font-light tracking-tight;
+  }
+
+  .luxury-card {
+    @apply bg-card border border-border/50 shadow-sm hover:shadow-md transition-all duration-500;
+  }
+
+  .luxury-button {
+    @apply px-8 py-4 text-sm tracking-widest uppercase font-medium transition-all duration-300;
+  }
+
+  .teal-glow {
+    box-shadow: 0 0 40px hsl(var(--nedjma-teal) / 0.15);
+  }
+
+  .page-transition {
+    @apply animate-fade-in;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
